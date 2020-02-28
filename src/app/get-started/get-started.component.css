@@ -1,0 +1,25 @@
+.container {
+    width: 35%;
+    margin: 15% auto;
+    border: none;
+    padding: 25px;
+    background-color: crimson;
+    color: white;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.row{
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    padding: 15px;
+    color: black;
+    font-size: 120%;
+    background-color:white;
+    border: none;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}

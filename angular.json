@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "PcGuide": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PcGuide"
+    }
+  },
+  "defaultProject": "PcGuide",
+  "cli": {
+    "analytics": "a2faab1f-c1c0-428e-bd05-7e3c9e3b9ffc"
+  }
 }

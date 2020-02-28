@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html{
+    background-color: #1fc8db;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    color: white;
+    opacity: 0.95;
+  }
+
+.container {
+    width: 35%;
+    margin: 15% auto;
+    border: none;
+    padding: 25px;
+    background-color: crimson;
+    color: white;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.row{
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    padding: 15px;
+    color: black;
+    font-size: 120%;
+    background-color:white;
+    border: none;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
