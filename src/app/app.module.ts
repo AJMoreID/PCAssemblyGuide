@@ -11,6 +11,9 @@ import { PreferenceGpuComponent } from './preference-gpu/preference-gpu.componen
 import { PreferenceCpuComponent } from './preference-cpu/preference-cpu.component';
 import { PreferenceRamComponent } from './preference-ram/preference-ram.component';
 import { ResultComponent } from './result/result.component';
+import { NbThemeModule, NbThemeService } from '@nebular/theme';
+import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
+import { NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,15 @@ import { ResultComponent } from './result/result.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NbThemeModule.forRoot(),
+    RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
+    NbLayoutModule,
+    NbSidebarModule.forRoot(), // NbSidebarModule.forRoot(), //if this is your app.module
+    NbButtonModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
