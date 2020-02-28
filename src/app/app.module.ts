@@ -36,8 +36,7 @@ import { NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme'
     NbSidebarModule.forRoot(), // NbSidebarModule.forRoot(), //if this is your app.module
     NbButtonModule,
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
