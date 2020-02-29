@@ -8,10 +8,17 @@ import { cpuList } from '../model/cpuList';
 })
 export class CpuSelectionComponent implements OnInit {
   public cpuList = cpuList;
-
+  public computerProfile = {
+    cpuPicked: {}
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  cpuSelected(value) {
+    console.log(value);
+    this.computerProfile.cpuPicked = value;
+    console.log(this.computerProfile);
+  }
 }

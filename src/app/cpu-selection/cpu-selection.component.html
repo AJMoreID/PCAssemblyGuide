@@ -28,20 +28,21 @@
 
     </nb-sidebar>
     <nb-layout-column>
+        <nb-card>
         <table data-source="cpuList">
             <tr *ngFor="let cpu of cpuList; let i = index;">
-                <nb-radio status="basic">
-
-                    <td class="productName">
-                        <p>{{cpuList[i].cpuName}}</p>
-                    </td>
+                <div class="selection">
+                <nb-radio status="basic" [value]="cpu.cpuId" (click)="cpuSelected(cpuList[i])">
                     <td class="productPrice">
                         <p>{{cpuList[i].cpuPrice}}</p>
                     </td>
+                    <td class="productName">
+                        <p>{{cpuList[i].cpuName}}</p>
+                    </td>
                 </nb-radio>
-
+            </div>
             </tr>
-
         </table>
+    </nb-card>
     </nb-layout-column>
 </nb-layout>
