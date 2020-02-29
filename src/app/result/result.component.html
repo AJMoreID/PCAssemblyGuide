@@ -20,7 +20,7 @@
                     {{customColumn}}
                 </th>
                 <td nbTreeGridCell *nbTreeGridCellDef="let row">
-                    <!-- <nb-fs-icon [kind]="row.data.kind" [expanded]="row.expanded"></nb-fs-icon> -->
+                    <nb-fs-icon [kind]="row.data.kind" [expanded]="row.expanded"></nb-fs-icon>
                     {{row.data[customColumn]}}
                 </td>
             </ng-container>

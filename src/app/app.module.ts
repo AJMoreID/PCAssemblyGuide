@@ -10,10 +10,9 @@ import { BudgetComponent } from './budget/budget.component';
 import { PreferenceGpuComponent } from './preference-gpu/preference-gpu.component';
 import { PreferenceCpuComponent } from './preference-cpu/preference-cpu.component';
 import { PreferenceRamComponent } from './preference-ram/preference-ram.component';
-import { ResultComponent } from './result/result.component';
-import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule } from '@nebular/theme';
+import { ResultComponent, FsIconComponent } from './result/result.component';
+import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconModule, NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
-import { NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -26,6 +25,7 @@ import { NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme'
     PreferenceCpuComponent,
     PreferenceRamComponent,
     ResultComponent,
+    FsIconComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +37,7 @@ import { NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme'
     NbButtonModule,
     NbTreeGridModule,
     NbCardModule,
+    NbIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
