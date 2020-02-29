@@ -11,7 +11,7 @@ import { PreferenceGpuComponent } from './preference-gpu/preference-gpu.componen
 import { PreferenceCpuComponent } from './preference-cpu/preference-cpu.component';
 import { PreferenceRamComponent } from './preference-ram/preference-ram.component';
 import { ResultComponent } from './result/result.component';
-import { NbThemeModule, NbThemeService, NbCheckboxModule, NbRadioModule } from '@nebular/theme';
+import { NbThemeModule, NbThemeService, NbCheckboxModule, NbRadioModule, NbTreeGridModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import { NbSidebarModule, NbLayoutModule, NbButtonModule, NbCardModule } from '@nebular/theme';
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
@@ -33,13 +33,14 @@ import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
     BrowserModule,
     AppRoutingModule,
     NbThemeModule.forRoot(),
-    RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app.module
+    RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app-routing.module
     NbLayoutModule,
     NbSidebarModule.forRoot(), // NbSidebarModule.forRoot(), //if this is your app.module
     NbButtonModule,
     NbCardModule,
     NbCheckboxModule,
-    NbRadioModule
+    NbRadioModule,
+    NbTreeGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
