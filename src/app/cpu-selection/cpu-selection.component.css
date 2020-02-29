@@ -1,0 +1,53 @@
+.topNavLeft p{
+    float: left;
+}
+
+.topNavRight{
+    float:right;
+}
+
+.btnGroup{
+    margin-top: 120%;
+}
+
+.nextBtn{
+    margin-left: 25%;
+}
+
+.backBtn:active,
+.backBtn:focus,
+.nextBtn:active,
+.nextBtn:focus{
+    border: none;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 6px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+table {
+    margin: 5% auto;
+    width: 75%;
+    border-collapse: collapse;
+}
+
+th{
+    padding: 1em;
+}
+
+.productName{
+    margin-left: 50px;
+}
+
+.productPrice{
+    float:right;
+}
+
+td{
+    padding: 0.5em;
+}
+
+tr{
+   line-height: 3;
+}
+
+tr:nth-child(odd){
+    background-color: white;
+}

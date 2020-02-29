@@ -13,6 +13,8 @@ import { PreferenceRamComponent } from './preference-ram/preference-ram.componen
 import { ResultComponent, FsIconComponent } from './result/result.component';
 import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconModule, NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
+import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
+import { NbCheckboxModule, NbRadioModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { RouterModule } from '@angular/router'; // we also need angular router f
     PreferenceRamComponent,
     ResultComponent,
     FsIconComponent,
+    CpuSelectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +38,11 @@ import { RouterModule } from '@angular/router'; // we also need angular router f
     NbLayoutModule,
     NbSidebarModule.forRoot(), // NbSidebarModule.forRoot(), //if this is your app.module
     NbButtonModule,
-    NbTreeGridModule,
     NbCardModule,
-    NbIconModule,
+    NbCheckboxModule,
+    NbRadioModule,
+    NbTreeGridModule,
+    NbIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,12 +4,14 @@ import { GetStartedComponent } from './get-started/get-started.component';
 import { UsageCategoryComponent } from './usage-category/usage-category.component';
 import { BudgetComponent } from './budget/budget.component';
 import { ResultComponent } from './result/result.component';
+import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
+
 
 const routes: Routes = [
-  {path: '', component: GetStartedComponent},
   {path: 'start', component: GetStartedComponent},
   {path: 'usage', component: UsageCategoryComponent},
   {path: 'budget', component: BudgetComponent},
+  {path: 'cpu', component: CpuSelectionComponent},
   {path: 'summary', component: ResultComponent},
   {path: '**', component: GetStartedComponent}
 ];

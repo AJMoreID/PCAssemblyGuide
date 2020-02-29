@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UsageCategoryComponent } from './usage-category.component';
+import { CpuSelectionComponent } from './cpu-selection.component';
 
-describe('UsageCategoryComponent', () => {
-  let component: UsageCategoryComponent;
-  let fixture: ComponentFixture<UsageCategoryComponent>;
+describe('CpuSelectionComponent', () => {
+  let component: CpuSelectionComponent;
+  let fixture: ComponentFixture<CpuSelectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsageCategoryComponent ]
+      declarations: [ CpuSelectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UsageCategoryComponent);
+    fixture = TestBed.createComponent(CpuSelectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
