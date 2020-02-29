@@ -13,6 +13,10 @@
     opacity: 0.95;
   } */
 
+  html{
+    background-color: #1fc8db;
+  }
+
 /* .container {
     width: 35%;
     margin: 15% auto;
