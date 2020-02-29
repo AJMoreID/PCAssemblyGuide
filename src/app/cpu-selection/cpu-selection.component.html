@@ -1,0 +1,47 @@
+<nb-layout>
+    <nb-layout-header fixed>
+        <div class="topNavLeft">
+            <p>Recommended CPUs</p>
+        </div>
+        <div class="topNavRight">
+            <p>Select GPUs</p>
+        </div>
+    </nb-layout-header>
+
+    <nb-sidebar>
+
+        <div class="sideBarTitle">
+            <h2>Chosse Your CPU</h2>
+        </div>
+
+        <div class="roleSelection">
+            <h4>Professional Computing</h4>
+        </div>
+
+        <div class="cpuTypeSelection">
+            <h5>AMD</h5>
+        </div>
+        <div class="btnGroup">
+            <button class="backBtn" nbButton status="basic">Back</button>
+            <button class="nextBtn" nbButton status="success">Next</button>
+        </div>
+
+    </nb-sidebar>
+    <nb-layout-column>
+        <table data-source="cpuList">
+            <tr *ngFor="let cpu of cpuList; let i = index;">
+                <nb-radio status="basic">
+
+                    <td class="productName">
+                        <p>{{cpuList[i].cpuName}}</p>
+                    </td>
+                    <td class="productPrice">
+                        <p>{{cpuList[i].cpuPrice}}</p>
+                    </td>
+                </nb-radio>
+
+            </tr>
+
+        </table>
+    </nb-layout-column>
+</nb-layout>

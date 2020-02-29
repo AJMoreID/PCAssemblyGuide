@@ -1,15 +1,55 @@
-<div class="outline">
-    <a href="#">
-        <div class="box">Gaming</div>
-    </a>
-    <a href="#">
-        <div class="box">Multi-Tasking</div>
-    </a>
-    <a href="#">
-        <div class="box">Digital Rendering</div>
-    </a>
-    <a href="#">
-        <div class="box">Programming</div>
-    </a>
-</div>
+<nb-layout>
+    <nb-layout-header fixed>Type of usage your setup</nb-layout-header>
+    <nb-layout-column class="colored-column-basic">
+        <div class="outline" *ngIf="displayRole">
+            <span class="selectionLink" (click)="displayHomeCPUPref();">
+                <div class="box">Home & Office</div>
+            </span>
+            <span class="selectionLink" (click)="displayGamingCPUPref();">
+                <div class="box">Gaming</div>
+            </span>
+            <span class="selectionLink" (click)="displayExtremeCPUPref();">
+                <div class="box">Extreme Setup</div>
+            </span>
+            <span class="selectionLink" (click)="displayProfessionalCPUPref();">
+                <div class="box">Professional Computing</div>
+            </span>
+        </div>
 
+        <div class="outline" *ngIf="displayHomeCPU">
+            <span class="selectionLink">
+                <div class="box">AMD</div>
+            </span>
+            <span class="selectionLink">
+                <div class="box">Intel</div>
+            </span>
+        </div>
+
+        <div class="outline" *ngIf="displayGamingCPU">
+            <span class="selectionLink">
+                <div class="box">AMD Ryzen</div>
+            </span>
+            <span class="selectionLink">
+                <div class="box">Intel i5</div>
+            </span>
+        </div>
+
+        <div class="outline" *ngIf="displayExtremeCPU">
+            <span class="selectionLink">
+                <div class="box">AMD Ryzen</div>
+            </span>
+            <span class="selectionLink">
+                <div class="box">Intel i7</div>
+            </span>
+        </div>
+
+        <div class="outline" *ngIf="displayProfessionalCPU">
+            <span class="selectionLink">
+                <div class="box">AMD Thread Ripper</div>
+            </span>
+            <span class="selectionLink">
+                <div class="box">Intel i7 i9</div>
+            </span>
+        </div>
+    </nb-layout-column>
+</nb-layout>
