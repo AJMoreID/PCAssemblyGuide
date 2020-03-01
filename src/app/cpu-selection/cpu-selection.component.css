@@ -1,17 +1,37 @@
-.topNavLeft p{
+
+p .topNavLeft{
     float: left;
 }
 
-.topNavRight{
-    float:right;
+p .topNavRight{
+    margin-left: 85%;
+    float: right;
+}
+
+.topNav{
+    clear: both;
+}
+
+.sideBarTitle{
+    font-size: 150%;
+}
+
+.rolePicked{
+    font-size: 110%;
+    margin-top: 70%;
 }
 
 .btnGroup{
-    margin-top: 120%;
+    line-height: 75%;
 }
 
 .nextBtn{
     margin-left: 25%;
+}
+
+.backBtn,
+.nextBtn {
+    margin-top: 195%;
 }
 
 .backBtn:active,
@@ -59,7 +79,7 @@ td{
 
 .selection:hover{
     background-color: rgba(129, 206, 51, 0.49);
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .selection:active{

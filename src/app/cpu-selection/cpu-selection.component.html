@@ -1,26 +1,19 @@
 <nb-layout>
-    <nb-layout-header fixed>
-        <div class="topNavLeft">
-            <p>Recommended CPUs</p>
-        </div>
-        <div class="topNavRight">
-            <p>Select GPUs</p>
-        </div>
+    <nb-layout-header>
+            <p class=".topNavLeft">Recommended CPUs</p>
+            <p class=".topNavRight">Select GPUs</p>
     </nb-layout-header>
 
     <nb-sidebar>
-
-        <div class="sideBarTitle">
-            <h2>Chosse Your CPU</h2>
+        <div>
+            <h2 class="sideBarTitle">Chosse Your CPU</h2>
         </div>
 
-        <div class="roleSelection">
-            <h4>Professional Computing</h4>
+        <div class="rolePicked">
+            <h4>{{computerDisplayProfile.type}}</h4>
+            <h4>AMD</h4>
         </div>
 
-        <div class="cpuTypeSelection">
-            <h5>AMD</h5>
-        </div>
         <div class="btnGroup">
             <button class="backBtn" nbButton status="basic">Back</button>
             <button class="nextBtn" nbButton status="success">Next</button>

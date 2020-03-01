@@ -15,6 +15,7 @@ import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconMo
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
 import { NbCheckboxModule, NbRadioModule } from '@nebular/theme';
+import { UserRecordService } from './userRecord.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { NbCheckboxModule, NbRadioModule } from '@nebular/theme';
     NbTreeGridModule,
     NbIconModule
   ],
-  providers: [],
+  providers: [UserRecordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { cpuList } from '../model/cpuList';
+import { UserRecordService } from '../userRecord.service';
 
 @Component({
   selector: 'app-cpu-selection',
@@ -8,17 +9,22 @@ import { cpuList } from '../model/cpuList';
 })
 export class CpuSelectionComponent implements OnInit {
   public cpuList = cpuList;
-  public computerProfile = {
-    cpuPicked: {}
+  public computerDisplayProfile = {
+    type: "",
+    cpuPref: "",
+    cpuPicked: ""
   }
-  constructor() { }
+  constructor(private userRecordService:UserRecordService) { }
 
   ngOnInit(): void {
+    this.computerDisplayProfile.type = this.userRecordService.getComputerType();
+
+      console.log(this.computerDisplayProfile.type)
   }
 
   cpuSelected(value) {
     console.log(value);
-    this.computerProfile.cpuPicked = value;
-    console.log(this.computerProfile);
+    this.computerDisplayProfile.cpuPicked = value;
+    console.log(this.computerDisplayProfile);
   }
 }
