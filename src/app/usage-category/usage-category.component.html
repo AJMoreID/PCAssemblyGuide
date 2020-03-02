@@ -17,37 +17,37 @@
         </div>
 
         <div class="outline" *ngIf="displayHomeCPU">
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onAMDPrefSelection()">
                 <div class="box">AMD</div>
             </span>
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onIntelPrefSelection()">
                 <div class="box">Intel</div>
             </span>
         </div>
 
         <div class="outline" *ngIf="displayGamingCPU">
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onAMDPrefSelection()">
                 <div class="box">AMD Ryzen</div>
             </span>
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onIntelPrefSelection()">
                 <div class="box">Intel i5</div>
             </span>
         </div>
 
         <div class="outline" *ngIf="displayExtremeCPU">
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onAMDPrefSelection()">
                 <div class="box">AMD Ryzen</div>
             </span>
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onIntelPrefSelection()">
                 <div class="box">Intel i7</div>
             </span>
         </div>
 
         <div class="outline" *ngIf="displayProfessionalCPU">
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onAMDPrefSelection()">
                 <div class="box">AMD Thread Ripper</div>
             </span>
-            <span class="selectionLink">
+            <span class="selectionLink" (click)="onIntelPrefSelection()">
                 <div class="box">Intel i7 i9</div>
             </span>
         </div>

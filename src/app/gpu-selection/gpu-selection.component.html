@@ -1,0 +1,123 @@
+<nb-layout>
+    <nb-layout-header>
+        <div class="stepper">
+            <nb-stepper orientation="horizontal">
+                <nb-step [label]="labelOne">
+                    <ng-template #labelOne>Select CPU</ng-template>
+                    <!-- <h4>Step content #1</h4>
+              <p class="lorem">
+                Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
+                Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
+                gravida vizzle, dang.
+              </p>
+              <button nbButton disabled nbStepperNext>prev</button>
+              <button nbButton nbStepperNext>next</button> -->
+                </nb-step>
+                <nb-step [label]="labelTwo">
+                    <ng-template #labelTwo>Second step</ng-template>
+                    <!-- <h4>Step content #2</h4>
+              <p class="lorem">
+                Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
+                Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
+                gravida vizzle, dang.
+              </p>
+              <button nbButton nbStepperPrevious>prev</button>
+              <button nbButton nbStepperNext>next</button> -->
+                </nb-step>
+                <nb-step label="Third step">
+                    <!-- <h4>Step content #3</h4>
+              <p class="lorem">
+                Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
+                Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
+                gravida vizzle, dang.
+              </p>
+              <button nbButton nbStepperPrevious>prev</button>
+              <button nbButton nbStepperNext>next</button> -->
+                </nb-step>
+                <nb-step [label]="labelFour">
+                    <ng-template #labelFour>Fourth step</ng-template>
+                    <!-- <h4>Step content #4</h4>
+              <p class="lorem">
+                Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
+                Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
+                gravida vizzle, dang.
+              </p>
+              <button nbButton nbStepperPrevious>prev</button>
+              <button nbButton disabled nbStepperNext>next</button> -->
+                </nb-step>
+                <nb-step [label]="labelFour">
+                    <ng-template #labelFour>Fifth step</ng-template>
+                    <!-- <h4>Step content #4</h4>
+                    <p class="lorem">
+                      Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
+                      Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
+                      gravida vizzle, dang.
+                    </p>
+                    <button nbButton nbStepperPrevious>prev</button>
+                    <button nbButton disabled nbStepperNext>next</button> -->
+                </nb-step>
+                <nb-step [label]="labelFour">
+                    <ng-template #labelFour>Fourth step</ng-template>
+                    <!-- <h4>Step content #4</h4>
+                        <p class="lorem">
+                          Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
+                          Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
+                          gravida vizzle, dang.
+                        </p>
+                        <button nbButton nbStepperPrevious>prev</button>
+                        <button nbButton disabled nbStepperNext>next</button> -->
+                </nb-step>
+                <nb-step [label]="labelFour">
+                    <ng-template #labelFour>Fourth step</ng-template>
+                    <!-- <h4>Step content #4</h4>
+                            <p class="lorem">
+                              Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
+                              Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
+                              gravida vizzle, dang.
+                            </p>
+                            <button nbButton nbStepperPrevious>prev</button>
+                            <button nbButton disabled nbStepperNext>next</button> -->
+                </nb-step>
+            </nb-stepper>
+        </div>
+    </nb-layout-header>
+
+    <nb-sidebar>
+        <div>
+            <h2 class="sideBarTitle">Chosse Your Graphics Card</h2>
+        </div>
+
+        <!-- <div class="rolePicked">
+            <h4>{{computerDisplayProfile.type}}</h4>
+            <h4 style="margin-top: 25%;
+            text-align: center;">{{computerDisplayProfile.cpuPref}}</h4>
+        </div> -->
+
+        <!-- <img *ngIf="amdSelected" src="../../assets/images/amd.png" alt="cpuBrand" style="width: 100%; padding: 25px;">
+        <img *ngIf="intelSelected" src="../../assets/images/intel.png" alt="cpuBrand" width="120%"> -->
+
+        <div class="btnGroup">
+            <button class="backBtn" nbButton status="basic">Back</button>
+            <button class="nextBtn" nbButton status="success">Next</button>
+        </div>
+
+    </nb-sidebar>
+    <nb-layout-column>
+        <nb-card>
+            <table data-source="gpuList">
+                <tr *ngFor="let gpu of gpuList; let i = index;">
+                    <div class="selection">
+                        <nb-radio status="basic" [value]="gpu.gpuId">
+                            <td class="productPrice">
+                                <p>{{gpuList[i].gpuPrice}}</p>
+                            </td>
+                            <td class="productName">
+                                <p>{{gpuList[i].gpuName}}</p>
+                            </td>
+                        </nb-radio>
+                    </div>
+                </tr>
+            </table>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

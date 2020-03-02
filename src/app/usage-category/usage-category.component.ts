@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { cpuList } from '../model/cpuList';
 import { UserRecordService } from '../userRecord.service';
+import { userProfile } from '../userProfile.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usage-category',
@@ -8,12 +10,14 @@ import { UserRecordService } from '../userRecord.service';
   styleUrls: ['./usage-category.component.css']
 })
 export class UsageCategoryComponent implements OnInit {
-  userProfile;
 
   homeType = "Home & Office";
   gamingType = "Gaming Setup";
   extremeType = "Extreme Level";
   professionalType = "Professional Computing";
+
+  amdPref = "AMD";
+  intelPref = "Intel";
 
   displayHomeCPU = false;
   displayGamingCPU = false;
@@ -24,7 +28,7 @@ export class UsageCategoryComponent implements OnInit {
   cpuList = cpuList;
   image = cpuList[0].imagePath;
 
-  constructor(private userRecord: UserRecordService) { }
+  constructor(private userRecord: UserRecordService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -53,5 +57,15 @@ export class UsageCategoryComponent implements OnInit {
     this.userRecord.setComputerType(this.professionalType)
     this.displayProfessionalCPU = true;
     this.displayRole = false;
+  }
+
+  onAMDPrefSelection(){
+    this.userRecord.setCPUPref(this.amdPref);
+    this.router.navigateByUrl('/cpu');
+  }
+
+  onIntelPrefSelection(){
+    this.userRecord.setCPUPref(this.intelPref);
+    this.router.navigateByUrl('/cpu');
   }
 }

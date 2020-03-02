@@ -11,11 +11,12 @@ import { PreferenceGpuComponent } from './preference-gpu/preference-gpu.componen
 import { PreferenceCpuComponent } from './preference-cpu/preference-cpu.component';
 import { PreferenceRamComponent } from './preference-ram/preference-ram.component';
 import { ResultComponent, FsIconComponent } from './result/result.component';
-import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconModule, NbSidebarModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
+import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconModule, NbSidebarModule, NbLayoutModule, NbButtonModule, NbStepperModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
 import { NbCheckboxModule, NbRadioModule } from '@nebular/theme';
 import { UserRecordService } from './userRecord.service';
+import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { UserRecordService } from './userRecord.service';
     ResultComponent,
     FsIconComponent,
     CpuSelectionComponent,
+    GpuSelectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { UserRecordService } from './userRecord.service';
     NbCheckboxModule,
     NbRadioModule,
     NbTreeGridModule,
-    NbIconModule
+    NbIconModule,
+    NbStepperModule
   ],
   providers: [UserRecordService],
   bootstrap: [AppComponent]

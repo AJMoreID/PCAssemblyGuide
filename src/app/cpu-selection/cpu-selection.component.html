@@ -1,7 +1,7 @@
 <nb-layout>
     <nb-layout-header>
-            <p class=".topNavLeft">Recommended CPUs</p>
-            <p class=".topNavRight">Select GPUs</p>
+        <p class=".topNavLeft">Recommended CPUs</p>
+        <p class=".topNavRight">Select GPUs</p>
     </nb-layout-header>
 
     <nb-sidebar>
@@ -10,32 +10,39 @@
         </div>
 
         <div class="rolePicked">
-            <h4>{{computerDisplayProfile.type}}</h4>
-            <h4>AMD</h4>
+            <div class="brandSelection" [ngClass]="{'activeLink': amdChecked}" (click)="amdFilterList()">
+                <h4 style="text-align: center;">AMD</h4>
+                <img src="../../assets/images/amd.png" alt="cpuBrand" style="width: 100%; padding: 25px;">
+            </div>
+            <div class="brandSelection" [ngClass]="{'activeLink': intelChecked}" (click)="intelFilterList()">
+                <h4 style="text-align: center;">Intel</h4>
+                <img src="../../assets/images/intel.png" alt="cpuBrand" width="120%">
+            </div>
         </div>
 
+
         <div class="btnGroup">
-            <button class="backBtn" nbButton status="basic">Back</button>
-            <button class="nextBtn" nbButton status="success">Next</button>
+            <button class="backBtn" nbButton status="basic" (click)="backToUsageSelection()">Back</button>
+            <button class="nextBtn" nbButton status="success" (click)="nextToGpuSelection()">Next</button>
         </div>
 
     </nb-sidebar>
     <nb-layout-column>
         <nb-card>
-        <table data-source="cpuList">
-            <tr *ngFor="let cpu of cpuList; let i = index;">
-                <div class="selection">
-                <nb-radio status="basic" [value]="cpu.cpuId" (click)="cpuSelected(cpuList[i])">
-                    <td class="productPrice">
-                        <p>{{cpuList[i].cpuPrice}}</p>
-                    </td>
-                    <td class="productName">
-                        <p>{{cpuList[i].cpuName}}</p>
-                    </td>
-                </nb-radio>
-            </div>
-            </tr>
-        </table>
-    </nb-card>
+            <table data-source="filteredCpuList">
+                <tr *ngFor="let cpu of filteredCpuList; let i = index;">
+                    <div class="selection">
+                        <nb-radio status="basic" [value]="cpu.cpuId" (click)="cpuSelected(filteredCpuList[i])">
+                            <td class="productPrice">
+                                <p>{{filteredCpuList[i].cpuPrice}}</p>
+                            </td>
+                            <td class="productName">
+                                <p>{{filteredCpuList[i].cpuName}}</p>
+                            </td>
+                        </nb-radio>
+                    </div>
+                </tr>
+            </table>
+        </nb-card>
     </nb-layout-column>
 </nb-layout>

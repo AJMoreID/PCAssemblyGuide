@@ -12,11 +12,15 @@ export class UserRecordService {
         this.userProfile.computerType = type;
     }
 
+    getComputerType(){
+        return this.userProfile.computerType;
+    }
+
     setCPUPref(type: string){
         this.userProfile.cpuPref = type;
     }
 
-    getComputerType(){
-        return this.userProfile.computerType;
+    getCPUPref(){
+        return this.userProfile.cpuPref;
     }
 }

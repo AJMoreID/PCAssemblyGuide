@@ -5,6 +5,7 @@ import { UsageCategoryComponent } from './usage-category/usage-category.componen
 import { BudgetComponent } from './budget/budget.component';
 import { ResultComponent } from './result/result.component';
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
+import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
 
 
 const routes: Routes = [
@@ -12,8 +13,9 @@ const routes: Routes = [
   {path: 'usage', component: UsageCategoryComponent},
   {path: 'budget', component: BudgetComponent},
   {path: 'cpu', component: CpuSelectionComponent},
+  {path: 'gpu', component: GpuSelectionComponent},
   {path: 'summary', component: ResultComponent},
-  {path: '**', component: GetStartedComponent}
+  {path: '**', redirectTo: 'start'}
 ];
 
 @NgModule({
