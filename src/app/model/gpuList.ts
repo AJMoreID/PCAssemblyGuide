@@ -5,5 +5,11 @@
     {gpuId: 4, gpuBrand: "Nvidia", gpuName: "MSI Gaming Nvidia RTX 2070 SUPER", gpuPrice: "638.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
     {gpuId: 5, gpuBrand: "Nvidia", gpuName: "Zotac Mini Nvidia RTX 2070", gpuPrice: "699.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
     {gpuId: 6, gpuBrand: "Nvidia", gpuName: "ASUS ROG Nvidia RTX 1660", gpuPrice: "289.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
-    {gpuId: 7, gpuBrand: "Nvidia", gpuName: "EVGA Nvidia RTX 2060", gpuPrice: "279.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" }
+    {gpuId: 7, gpuBrand: "Nvidia", gpuName: "EVGA Nvidia RTX 2060", gpuPrice: "279.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
+    {gpuId: 8, gpuBrand: "AMD", gpuName: "AMD Radeon RX 580X", gpuPrice: "579.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
+    {gpuId: 9, gpuBrand: "AMD", gpuName: "AMD Radeon RX 570X", gpuPrice: "479.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
+    {gpuId: 10, gpuBrand: "AMD", gpuName: "AMD Radeon RX 560X", gpuPrice: "379.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
+    {gpuId: 11, gpuBrand: "AMD", gpuName: "AMD Radeon RX 550X", gpuPrice: "329.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
+    {gpuId: 12, gpuBrand: "AMD", gpuName: "AMD Radeon RX 540X", gpuPrice: "279.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
+    {gpuId: 13, gpuBrand: "AMD", gpuName: "AMD Radeon RX 480X", gpuPrice: "249.00", imagePath: "https://i.dlpng.com/static/png/6358243_preview.png" },
    ];

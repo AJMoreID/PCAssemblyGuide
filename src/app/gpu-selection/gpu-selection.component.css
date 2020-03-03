@@ -17,12 +17,12 @@ p .topNavRight{
 }
 
 .sideBarTitle{
-    font-size: 150%;
+    font-size: 100%;
 }
 
 .rolePicked{
     font-size: 110%;
-    margin-top: 40%;
+    margin-top: 15%;
 }
 
 .nextBtn{
@@ -81,4 +81,6 @@ td{
     background-color: rgba(129, 206, 51, 0.49);
     transform: scale(1.01);
 }
+
+
 

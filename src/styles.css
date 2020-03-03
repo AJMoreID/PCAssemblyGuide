@@ -70,5 +70,76 @@ font-family: sans-serif;
   transform: scale(1.05);
 }
 
+.brandSelection{
+  width: 85%;
+  padding: 1em;
+  margin: 0.5em auto;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
 
+.brandSelection:hover{
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.brandSelection:active{
+  transform: scale(0.9);
+}
+
+.activeLink{
+  background-color: white;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+}
+
+.navIcons{
+  width: 80px;
+  padding: 1.5em;
+  margin: 0 30px;
+  transition: 0.3s;
+}
+
+.navIcons:hover{
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15), 0 -4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.navIcons:active{
+  transform: scale(0.95);
+}
+
+.navIcons-active{
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15), 0 -4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navParts{
+  margin: 0 auto;
+}
+
+nb-layout-header{
+  background-color: lightgrey;
+  /* text-align: center; */
+  position: fixed;
+  opacity: 0.8;
+  width: 100%;
+  z-index: 1;
+}
+
+nb-card{
+  margin-top: 6%;
+}
+
+nb-sidebar{
+  margin-top: 7%;
+  border-radius: 5px;
+}
+
+@media only screen and (min-width: 1500px) {
+  .sideBarTitle {
+    margin-top: 50px;
+  }
+}
 

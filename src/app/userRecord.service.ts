@@ -3,24 +3,25 @@ import { Injectable } from "@angular/core";
 @Injectable()
 
 export class UserRecordService {
-    userProfile = {
-      computerType: "",
-      cpuPref: ""
+    storageTemplate = {
+        computerType: "computerType",
+        cpuBrand: "cpuBrand",
+        cpuId: "cpuId",
+        gpuId: "gpuId",
+        ramId: "ramId",
+        storageId: "storageId",
+        mobId: "mobId",
+        powerSupplyId: "powerSupplyId",
+        caseId: "caseId"
+    };
+
+    public userProfile = {};
+
+    setUserData(dataItemName:string, dataItemValue: any){
+        this.userProfile[dataItemName] = dataItemValue;
     }
 
-    setComputerType(type:string){
-        this.userProfile.computerType = type;
-    }
-
-    getComputerType(){
-        return this.userProfile.computerType;
-    }
-
-    setCPUPref(type: string){
-        this.userProfile.cpuPref = type;
-    }
-
-    getCPUPref(){
-        return this.userProfile.cpuPref;
+    getUserData(dataItemName: string){
+        return this.userProfile[dataItemName];
     }
 }
