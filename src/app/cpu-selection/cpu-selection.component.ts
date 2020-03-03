@@ -3,9 +3,11 @@ import { cpuList } from '../model/cpuList';
 import { UserRecordService } from '../userRecord.service';
 import { Router } from '@angular/router';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-cpu-selection',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './cpu-selection.component.html',
   styleUrls: ['./cpu-selection.component.css']
 })

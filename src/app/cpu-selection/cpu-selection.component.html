@@ -44,5 +44,29 @@
                 </tr>
             </table>
         </nb-card>
+
+        <nb-flip-card class="selection" *ngFor="let cpu of filteredCpuList; let i = index;">
+            <nb-card-front>
+              <nb-card accent="danger">
+                <nb-card-body>
+                    <nb-radio status="basic" [value]="cpu.cpuId" (click)="cpuSelected(filteredCpuList[i])">
+                        <td class="productName">
+                            <p>{{filteredCpuList[i].cpuName}}</p>
+                        </td>
+                    </nb-radio>
+                </nb-card-body>
+              </nb-card>
+            </nb-card-front>
+            <nb-card-back>
+              <nb-card>
+                <nb-card-body>
+                    <td>
+                        <p>{{filteredCpuList[i].cpuPrice}}</p>
+                    </td>
+                </nb-card-body>
+              </nb-card>
+            </nb-card-back>
+        </nb-flip-card>
+
     </nb-layout-column>
 </nb-layout>
