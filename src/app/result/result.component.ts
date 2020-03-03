@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { NbSortDirection, NbSortRequest, NbTreeGridDataSource, NbTreeGridDataSourceBuilder } from '@nebular/theme';
 
 interface TreeNode<T> {
   data: T;
@@ -101,6 +100,7 @@ export class ResultComponent implements AfterViewInit{
   }
 }
 
+import { NbSortDirection, NbSortRequest, NbTreeGridDataSource, NbTreeGridDataSourceBuilder } from '@nebular/theme';
 @Component({
   selector: 'nb-fs-icon',
   template: `

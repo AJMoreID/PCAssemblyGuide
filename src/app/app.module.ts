@@ -15,6 +15,7 @@ import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconMo
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
 import { NbCheckboxModule, NbRadioModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { UserRecordService } from './userRecord.service';
 import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
 import { HeaderStepperComponent } from './header-stepper/header-stepper.component';
@@ -48,7 +49,8 @@ import { HeaderStepperComponent } from './header-stepper/header-stepper.componen
     NbRadioModule,
     NbTreeGridModule,
     NbIconModule,
-    NbStepperModule
+    NbStepperModule,
+    NbEvaIconsModule
   ],
   providers: [UserRecordService],
   bootstrap: [AppComponent]
