@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { cpuList } from '../model/cpuList';
 import { UserRecordService } from '../userRecord.service';
-import { userProfile } from '../userProfile.model';
+import { __userProfile } from '../userProfile.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,44 +28,48 @@ export class UsageCategoryComponent implements OnInit {
   cpuList = cpuList;
   image = cpuList[0].imagePath;
 
+  public userProfile: __userProfile;
+
   constructor(private userRecord: UserRecordService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   displayHomeCPUPref(){
-    this.userRecord.setComputerType(this.homeType)
-    console.log(this.userRecord);
+    this.userRecord.setUserData(this.userRecord.storageTemplate.computerType,this.homeType)
+    console.log(this.userRecord.userProfile);
     this.displayHomeCPU = true;
     this.displayRole = false;
   }
 
   displayGamingCPUPref(){
-    this.userRecord.setComputerType(this.gamingType)
+    this.userRecord.setUserData(this.userRecord.storageTemplate.computerType,this.gamingType)
     console.log(this.userRecord);
     this.displayGamingCPU = true;
     this.displayRole = false;
   }
 
   displayExtremeCPUPref(){
-    this.userRecord.setComputerType(this.extremeType)
+    this.userRecord.setUserData(this.userRecord.storageTemplate.computerType,this.extremeType)
     this.displayExtremeCPU = true;
     this.displayRole = false;
   }
 
   displayProfessionalCPUPref(){
-    this.userRecord.setComputerType(this.professionalType)
+    this.userRecord.setUserData(this.userRecord.storageTemplate.computerType,this.professionalType)
     this.displayProfessionalCPU = true;
     this.displayRole = false;
   }
 
   onAMDPrefSelection(){
-    this.userRecord.setCPUPref(this.amdPref);
+    this.userRecord.setUserData(this.userRecord.storageTemplate.cpuBrand, this.amdPref);
+    console.log(this.userRecord);
     this.router.navigateByUrl('/cpu');
   }
 
   onIntelPrefSelection(){
-    this.userRecord.setCPUPref(this.intelPref);
+    this.userRecord.setUserData(this.userRecord.storageTemplate.cpuBrand, this.intelPref);
+    console.log(this.userRecord);
     this.router.navigateByUrl('/cpu');
   }
 }

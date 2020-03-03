@@ -6,6 +6,7 @@ import { BudgetComponent } from './budget/budget.component';
 import { ResultComponent } from './result/result.component';
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
 import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
+import { HeaderStepperComponent } from './header-stepper/header-stepper.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'cpu', component: CpuSelectionComponent},
   {path: 'gpu', component: GpuSelectionComponent},
   {path: 'summary', component: ResultComponent},
+  {path: 'header', component: HeaderStepperComponent},
   {path: '**', redirectTo: 'start'}
 ];
 

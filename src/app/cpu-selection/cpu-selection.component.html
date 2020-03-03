@@ -1,7 +1,14 @@
 <nb-layout>
     <nb-layout-header>
-        <p class=".topNavLeft">Recommended CPUs</p>
-        <p class=".topNavRight">Select GPUs</p>
+        <div class="navParts">
+                <img alt="cpu" class="navIcons navIcons-active" src="../../assets/images/chip.svg" (click)="navToCPU();">
+                <img alt="gpu" class="navIcons" src="../../assets/images/gpu.png" (click)="navToGPU();">
+            <img alt="ram" class="navIcons" src="../../assets/images/ram.svg" (click)="navToRAM();">
+            <img alt="storage" class="navIcons" src="../../assets/images/storage.svg" (click)="navToStorage();">
+            <img alt="mb" class="navIcons" src="../../assets/images/mob.svg" (click)="navToMB();">
+            <img alt="ps" class="navIcons" src="../../assets/images/supply.svg" (click)="navToPowerSupply();">
+            <img alt="case" class="navIcons" src="../../assets/images/desktop.svg" (click)="navToCase();">
+        </div>
     </nb-layout-header>
 
     <nb-sidebar>

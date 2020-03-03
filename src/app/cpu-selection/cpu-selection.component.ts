@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { cpuList } from '../model/cpuList';
 import { UserRecordService } from '../userRecord.service';
 import { Router } from '@angular/router';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 @Component({
   selector: 'app-cpu-selection',
@@ -10,48 +9,44 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
   styleUrls: ['./cpu-selection.component.css']
 })
 export class CpuSelectionComponent implements OnInit {
+
+
   public cpuList = cpuList;
-  public computerDisplayProfile = {
-    type: "",
-    cpuPref: "",
-    cpuPicked: ""
-  }
+
+  cpuBrandSelected = this.userRecordService.getUserData(this.userRecordService.storageTemplate.cpuBrand);
 
   filteredCpuList;
 
   amdChecked = false;
   intelChecked = false;
 
-  constructor(private userRecordService:UserRecordService, private router: Router) { }
+  constructor(private userRecordService: UserRecordService, private router: Router) { }
 
   ngOnInit(): void {
-    this.computerDisplayProfile.cpuPref = this.userRecordService.getCPUPref();
-    if(this.computerDisplayProfile.cpuPref == "AMD"){
-      this.amdChecked = true;
-    } else {
-      this.intelChecked = true;
-    }
-    this.computerDisplayProfile.type = this.userRecordService.getComputerType();
     this.filterCpuList();
+
     console.log(this.filteredCpuList)
   }
 
-  filterCpuList(){
-    if(this.computerDisplayProfile.cpuPref == "Intel"){
+  filterCpuList() {
+    if (this.cpuBrandSelected == "Intel") {
       this.filteredCpuList = cpuList.filter(element => element.cpuBrand == "Intel");
-    }
-    if (this.computerDisplayProfile.cpuPref == "AMD"){
+      this.intelChecked = true;
+    } else if (this.cpuBrandSelected == "AMD") {
       this.filteredCpuList = cpuList.filter(element => element.cpuBrand == "AMD");
+      this.amdChecked = true;
+    } else {
+      this.filteredCpuList = this.cpuList;
     }
   }
 
-  amdFilterList(){
+  amdFilterList() {
     this.filteredCpuList = cpuList.filter(element => element.cpuBrand == "AMD");
     this.amdChecked = true;
     this.intelChecked = false;
   }
 
-  intelFilterList(){
+  intelFilterList() {
     this.filteredCpuList = cpuList.filter(element => element.cpuBrand == "Intel");
     this.amdChecked = false;
     this.intelChecked = true;
@@ -59,20 +54,42 @@ export class CpuSelectionComponent implements OnInit {
 
   cpuSelected(value) {
     console.log(value);
-    this.computerDisplayProfile.cpuPicked = value.cpuId;
-    console.log(this.computerDisplayProfile);
+    this.userRecordService.setUserData(this.userRecordService.storageTemplate.cpuId, value.cpuId);
+    console.log(this.userRecordService.userProfile);
   }
 
-  cpuHighlight(cpu){
-    this.computerDisplayProfile.cpuPicked === cpu;
-    console.log(this.computerDisplayProfile.cpuPicked);
+  navToCPU() {
+
   }
 
-  backToUsageSelection(){
+  navToGPU() {
+    this.router.navigateByUrl('/gpu');
+  }
+
+  navToRAM() {
+    this.router.navigateByUrl('/gpu');
+  }
+  navToStorage() {
+    this.router.navigateByUrl('/gpu');
+  }
+
+  navToMB() {
+    this.router.navigateByUrl('/gpu');
+  }
+
+  navToPowerSupply() {
+    this.router.navigateByUrl('/gpu');
+  }
+
+  navToCase() {
+    this.router.navigateByUrl('/gpu');
+  }
+
+  backToUsageSelection() {
     this.router.navigateByUrl('/usage');
   }
-  
-  nextToGpuSelection(){
+
+  nextToGpuSelection() {
     this.router.navigateByUrl('/gpu');
   }
 }

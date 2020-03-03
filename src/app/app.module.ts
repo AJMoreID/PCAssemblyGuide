@@ -17,6 +17,7 @@ import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
 import { NbCheckboxModule, NbRadioModule } from '@nebular/theme';
 import { UserRecordService } from './userRecord.service';
 import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
+import { HeaderStepperComponent } from './header-stepper/header-stepper.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
     FsIconComponent,
     CpuSelectionComponent,
     GpuSelectionComponent,
+    HeaderStepperComponent,
   ],
   imports: [
     BrowserModule,
