@@ -94,6 +94,7 @@ font-family: sans-serif;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   transform: scale(0.9);
 }
+/* to make button/card activated status when click */
 
 .navIcons{
   width: 80px;

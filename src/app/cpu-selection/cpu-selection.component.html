@@ -9,6 +9,12 @@
             <img alt="ps" class="navIcons" src="../../assets/images/supply.svg" (click)="navToPowerSupply();">
             <img alt="case" class="navIcons" src="../../assets/images/desktop.svg" (click)="navToCase();">
         </div>
+        <button nbButton *ngIf="themeName == 'default'" status="info" (click)="changeToDarkTheme()">
+            Change Theme
+        </button>
+        <button nbButton *ngIf="themeName == 'dark'" status="info" (click)="changeToDefaultTheme()">
+            Change Theme
+        </button>
     </nb-layout-header>
 
     <nb-sidebar>

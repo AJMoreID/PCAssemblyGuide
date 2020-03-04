@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-
+import { NbSortDirection, NbSortRequest, NbTreeGridDataSource, NbTreeGridDataSourceBuilder } from '@nebular/theme';
 interface TreeNode<T> {
   data: T;
   children?: TreeNode<T>[];
@@ -18,7 +18,7 @@ interface FSEntry {
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent implements AfterViewInit{
+export class ResultComponent implements OnInit{
 
   customColumn = 'name';
   defaultColumns = [ 'size', 'kind', 'items' ];
@@ -33,7 +33,7 @@ export class ResultComponent implements AfterViewInit{
     this.dataSource = this.dataSourceBuilder.create(this.data);
   }
 
-  ngAfterViewInit(){
+  ngOnInit(): void {
 
   }
 
@@ -100,7 +100,6 @@ export class ResultComponent implements AfterViewInit{
   }
 }
 
-import { NbSortDirection, NbSortRequest, NbTreeGridDataSource, NbTreeGridDataSourceBuilder } from '@nebular/theme';
 @Component({
   selector: 'nb-fs-icon',
   template: `

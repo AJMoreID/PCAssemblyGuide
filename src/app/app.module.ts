@@ -39,7 +39,7 @@ import { HeaderStepperComponent } from './header-stepper/header-stepper.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NbThemeModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'default' }),
     RouterModule, // RouterModule.forRoot(routes, { useHash: true }), if this is your app-routing.module
     NbLayoutModule,
     NbSidebarModule.forRoot(), // NbSidebarModule.forRoot(), //if this is your app.module
@@ -52,7 +52,7 @@ import { HeaderStepperComponent } from './header-stepper/header-stepper.componen
     NbStepperModule,
     NbEvaIconsModule
   ],
-  providers: [UserRecordService],
+  providers: [UserRecordService, NbThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

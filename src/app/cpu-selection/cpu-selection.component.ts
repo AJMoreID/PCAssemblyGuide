@@ -3,6 +3,7 @@ import { cpuList } from '../model/cpuList';
 import { UserRecordService } from '../userRecord.service';
 import { Router } from '@angular/router';
 import { ChangeDetectionStrategy } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
   selector: 'app-cpu-selection',
@@ -22,12 +23,32 @@ export class CpuSelectionComponent implements OnInit {
   amdChecked = false;
   intelChecked = false;
 
-  constructor(private userRecordService: UserRecordService, private router: Router) { }
+  themeName = 'default';
+
+  constructor(private themeService: NbThemeService, private userRecordService: UserRecordService, private router: Router) { 
+
+    this.themeService.onThemeChange()
+          .subscribe((theme: any) => {
+            console.log(`Theme changed to ${theme.name}`);
+          });
+  }
 
   ngOnInit(): void {
     this.filterCpuList();
 
     console.log(this.filteredCpuList)
+  }
+
+  changeToDarkTheme(){
+    this.themeService.changeTheme('dark');
+    this.themeName = 'dark';
+    console.log("themChangedTo: ", this.themeName);
+  }
+
+  changeToDefaultTheme(){
+    this.themeService.changeTheme('default');
+    this.themeName = 'default';
+    console.log("themChangedTo: ", this.themeName);
   }
 
   filterCpuList() {
