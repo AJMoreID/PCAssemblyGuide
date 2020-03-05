@@ -15,6 +15,8 @@ export class GpuSelectionComponent implements OnInit {
 
   amdChecked = false;
   nviChecked = false;
+
+  selectedGPUId;
   
   constructor(private router: Router, private userRecordService: UserRecordService) { }
 
@@ -39,7 +41,16 @@ export class GpuSelectionComponent implements OnInit {
   gpuSelected(value){
     console.log(value)
     this.userRecordService.setUserData(this.userRecordService.storageTemplate.gpuId, value.gpuId);
+    this.selectedGPUId = value.gpuId;
+    console.log("selectedGPUId: ", this.selectedGPUId);
   }
+
+  // scrollToDescription(gpuid) {
+  //   console.log(`scrolling to ${gpuid}`);
+  //   let el = document.getElementById(gpuid);
+  //   console.log("el: ", el);
+  //   el.scrollIntoView();
+  // }
 
   navToCPU() {
     this.router.navigateByUrl('/cpu');

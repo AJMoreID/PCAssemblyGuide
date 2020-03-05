@@ -1,15 +1,15 @@
 <nb-layout>
-        <nb-layout-header>
-                <div class="navParts">
-                    <img alt="cpu" class="navIcons" src="../../assets/images/chip.svg" (click)="navToCPU();">
-                    <img alt="gpu" class="navIcons navIcons-active" src="../../assets/images/gpu.png" (click)="navToGPU();">
-                    <img alt="ram" class="navIcons" src="../../assets/images/ram.svg" (click)="navToRAM();">
-                    <img alt="storage" class="navIcons" src="../../assets/images/storage.svg" (click)="navToStorage();">
-                    <img alt="mb" class="navIcons" src="../../assets/images/mob.svg" (click)="navToMB();">
-                    <img alt="ps" class="navIcons" src="../../assets/images/supply.svg" (click)="navToPowerSupply();">
-                    <img alt="case" class="navIcons" src="../../assets/images/desktop.svg" (click)="navToCase();">
-                </div>
-            </nb-layout-header>
+    <nb-layout-header>
+        <div class="navParts">
+            <img alt="cpu" class="navIcons" src="../../assets/images/chip.svg" (click)="navToCPU();">
+            <img alt="gpu" class="navIcons navIcons-active" src="../../assets/images/gpu.png" (click)="navToGPU();">
+            <img alt="ram" class="navIcons" src="../../assets/images/ram.svg" (click)="navToRAM();">
+            <img alt="storage" class="navIcons" src="../../assets/images/storage.svg" (click)="navToStorage();">
+            <img alt="mb" class="navIcons" src="../../assets/images/mob.svg" (click)="navToMB();">
+            <img alt="ps" class="navIcons" src="../../assets/images/supply.svg" (click)="navToPowerSupply();">
+            <img alt="case" class="navIcons" src="../../assets/images/desktop.svg" (click)="navToCase();">
+        </div>
+    </nb-layout-header>
 
     <nb-sidebar>
         <div>
@@ -17,15 +17,15 @@
         </div>
 
         <div class="rolePicked">
-                <div class="brandSelection" [ngClass]="{'activeLink': amdChecked}" (click)="amdFilterList()">
-                    <h4 style="text-align: center;">AMD</h4>
-                    <img src="../../assets/images/amdgpu.png" alt="cpuBrand" style="width: 70%; padding: 6px;">
-                </div>
-                <div class="brandSelection" [ngClass]="{'activeLink': nviChecked}" (click)="nviFilterList()">
-                    <h4 style="text-align: center;">Nvidia</h4>
-                    <img src="../../assets/images/nvidia.png" alt="cpuBrand" style=" width:100%; margin: 25px 0;">
-                </div>
+            <div class="brandSelection" [ngClass]="{'activeLink': amdChecked}" (click)="amdFilterList()">
+                <h4 style="text-align: center;">AMD</h4>
+                <img src="../../assets/images/amdgpu.png" alt="cpuBrand" style="width: 70%; padding: 6px;">
             </div>
+            <div class="brandSelection" [ngClass]="{'activeLink': nviChecked}" (click)="nviFilterList()">
+                <h4 style="text-align: center;">Nvidia</h4>
+                <img src="../../assets/images/nvidia.png" alt="cpuBrand" style=" width:100%; margin: 25px 0;">
+            </div>
+        </div>
 
         <div class="btnGroup">
             <button class="backBtn" nbButton status="basic" (click)="backToCpuSelection()">Back</button>
@@ -39,16 +39,119 @@
                 <tr *ngFor="let gpu of filterGpuList; let i = index;">
                     <div class="selection">
                         <nb-radio status="basic" [value]="gpu.gpuId" (click)="gpuSelected(filterGpuList[i])">
-                            <td class="productPrice">
+                            <!-- <td class="productPrice">
                                 <p>{{filterGpuList[i].gpuPrice}}</p>
-                            </td>
+                            </td> -->
                             <td class="productName">
                                 <p>{{filterGpuList[i].gpuName}}</p>
                             </td>
+                            <!-- <td (click)="scrollToDescription(filterGpuList[i].gpuId)" class="productName">
+                                <p>{{filterGpuList[i].gpuName}}</p>
+                            </td> -->
                         </nb-radio>
                     </div>
                 </tr>
             </table>
         </nb-card>
     </nb-layout-column>
+
+    <nb-layout-column>
+        <span>
+            <div *ngIf="selectedGPUId == 1" style="padding-top: 80px;">
+                <h2>ASUS ROG Nvidia RTX 2080Ti</h2>
+                <p>Based on the Turing architecture and designed to handle the graphical demands of 4K gaming, 
+                    the ASUS Republic of Gamers Strix GeForce RTX 2080 Ti OC Edition Graphics Card brings the power of real-time ray tracing and AI to your PC games. 
+                    It also features enhanced technologies to improve the performance of VR applications, including Variable Rate Shading, Multi-View Rendering, and VRWorks Audio. </p>
+                <p>The front panel of the card features a variety of outputs. There are two DisplayPort 1.4 outputs, two HDMI 2.0b outputs, and one USB Type-C port with the VirtualLink standard. The RTX 2080 Ti is not just about high-resolution gaming. Computationally intensive programs can utilize the GPU's 4352 cores to accelerate tasks using CUDA or other APIs. </p>
+                <p>For cooling, ASUS implemented triple Axial-tech fans. The Axial fans reduces the size of the fan's hub, which allows for longer blades and an added barrier ring that increases durability and downward air pressure through the heatsink. The fans are also rated IP5X for dust resistance. There is also Aura Sync RGB lighting on the shroud and backplate. Using Aura Sync software, you can sync the RGB lights with other ASUS products for a customized gaming setup. With Aura Sync, you can sync to music, temperature-based color changing, or select from a variety of patterns and static options.</p>
+                <img src="../../assets/images/ASUS ROG Nvidia RTX 2080Ti.jpg" alt="gpuBrand1" style="width: 80%; padding: 6px;">
+            </div>
+
+            <div *ngIf="selectedGPUId == 2" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>GIGABYTE's WINDFORCE Cooling System features unique blade fans, alternate spinning fan, copper heat pipes, and 3D active fan functionality, delivering an effective heat dissipation capacity for higher performance at lower temperatures. </p>
+                <p>WINDFORCE Cooling System with Alternate Spinning Fans</p>
+                <p>Intuitive Controls with AORUS Engine</p>
+                <p>PCI Express 3.0 x16</p>
+                <img src="../../assets/images/Gigabite Nvidia RTX 2080 SUPER.jpg" alt="gpuBrand2" style="width: 80%; padding: 6px;">
+            </div>
+
+            <div *ngIf="selectedGPUId == 3" style="padding-top: 80px;">
+                <h2>Zotac Extreme Nvidia RTX 2080</h2>
+                <p>The all-new generation of ZOTAC GAMING GeForce graphics cards are here. Based on the new NVIDIA Turing architecture, it’s packed with more cores and all-new GDDR6 ultra-fast memory. Integrated with more smart and optimized technologies, get ready to get fast and game strong like never before.</p>
+                <p>Features:</p>
+                <p>- IceStorm 2.0</p>
+                <p>- Freeze Fan Stop</p>
+                <p>- 16+4 Power Phase</p>
+                <p>- Active Fan Control</p>
+                <p>- GDDR6 memory</p>
+                <p>- PowerBoost</p>
+                <p>- SPECTRA 2.0 Lighting System</p>
+                <p>- OC Scanner</p>
+                <p>- FireStorm Utility</p>
+                <img src="../../assets/images/Zotac Extreme Nvidia RTX 2080.jpg" alt="gpuBrand3" style="width: 80%; padding: 6px;">
+            </div>
+
+            <div *ngIf="selectedGPUId == 4" style="padding-top: 80px;">
+                <h2>MSI Gaming Nvidia RTX 2070 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 5" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+            
+            <div *ngIf="selectedGPUId == 6" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 7" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 8" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 9" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 10" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 11" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 12" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+            <div *ngIf="selectedGPUId == 13" style="padding-top: 80px;">
+                <h2>Gigabite Nvidia RTX 2080 SUPER</h2>
+                <p>Hi, This is Allen's design</p>
+                <p>One more paragraph</p>
+            </div>
+
+        </span>
+    </nb-layout-column>
+
 </nb-layout>

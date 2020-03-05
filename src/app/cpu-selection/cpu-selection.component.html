@@ -58,7 +58,7 @@
             </table>
         </nb-card>
 
-        <nb-flip-card class="selection" *ngFor="let cpu of filteredCpuList; let i = index;">
+        <nb-flip-card *ngFor="let cpu of filteredCpuList; let i = index;">
             <nb-card-front>
               <nb-card accent="danger">
                 <nb-card-body>
@@ -80,6 +80,7 @@
               </nb-card>
             </nb-card-back>
         </nb-flip-card>
-
+        
     </nb-layout-column>
+
 </nb-layout>
