@@ -1,42 +1,64 @@
-<nb-card>
-    <nb-card-body>
-        Result Test Card1
-    </nb-card-body>
-</nb-card>
+<nb-layout>
+<!-- <nb-layout-header>
+    <nb-card>
+        <nb-card-body>
+      
+          <nb-actions size="medium">
+            <nb-action icon="search-outline"></nb-action>
+            <nb-action icon="power-outline"></nb-action>
+            <nb-action icon="person-outline"></nb-action>
+            <nb-action icon="home-outline"></nb-action>
+            <nb-action [icon]="disabledIconConfig" disabled></nb-action>
+            <nb-action>
+              Custom Action
+            </nb-action>
+          </nb-actions>
+      
+        </nb-card-body>
+      </nb-card>
+</nb-layout-header> -->
+<nb-layout-column>
+    <app-chatbot></app-chatbot>
+</nb-layout-column>
+<nb-layout-column>
+    <nb-card>
+        <nb-card-body>
+    
+            <label class="search-label" for="search">Search:</label>
+            <input nbInput [nbFilterInput]="dataSource" id="search" class="search-input">
+    
+            <table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
+    
+                <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+                <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+    
+                <ng-container [nbTreeGridColumnDef]="customColumn">
+                    <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
+                        {{customColumn}}
+                    </th>
+                    <td nbTreeGridCell *nbTreeGridCellDef="let row">
+                        <app-file-icon [kind]="row.data.kind" [expanded]="row.expanded"></app-file-icon>
+                        {{row.data[customColumn]}}
+                    </td>
+                </ng-container>
+    
+                <ng-container *ngFor="let column of defaultColumns; let index = index" [nbTreeGridColumnDef]="column"
+                    [showOn]="getShowOn(index)">
+                    <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
+                        {{column}}
+                    </th>
+                    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column] || '-'}}</td>
+                </ng-container>
+    
+            </table>
+    
+        </nb-card-body>
+    </nb-card>
+</nb-layout-column>
+<nb-layout-footer>This is footer</nb-layout-footer>
+</nb-layout>
 
-<nb-card>
-    <nb-card-body>
 
-        <label class="search-label" for="search">Search:</label>
-        <input nbInput [nbFilterInput]="dataSource" id="search" class="search-input">
-
-        <table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
-
-            <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
-            <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
-
-            <ng-container [nbTreeGridColumnDef]="customColumn">
-                <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
-                    {{customColumn}}
-                </th>
-                <td nbTreeGridCell *nbTreeGridCellDef="let row">
-                    <nb-fs-icon [kind]="row.data.kind" [expanded]="row.expanded"></nb-fs-icon>
-                    {{row.data[customColumn]}}
-                </td>
-            </ng-container>
-
-            <ng-container *ngFor="let column of defaultColumns; let index = index" [nbTreeGridColumnDef]="column"
-                [showOn]="getShowOn(index)">
-                <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
-                    {{column}}
-                </th>
-                <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column] || '-'}}</td>
-            </ng-container>
-
-        </table>
-
-    </nb-card-body>
-</nb-card>
 
 <nb-card>
     <nb-card-body>
@@ -44,7 +66,18 @@
     </nb-card-body>
 </nb-card>
 
-<!-- nb carb must be with nb layout, otherwise, it doesn't take effect -->
+<nb-card>
+    <nb-card-body>
+        nb carb can be outside of nb layout, but it must be with nb layout
+    </nb-card-body>
+</nb-card>
 
-<nb-layout>
-</nb-layout>
+<nb-card>
+    <nb-card-body>
+        normally nb carb or other component should be in nb-layout-column or footer or header or sidebar of nb-layout
+    </nb-card-body>
+</nb-card>
+
+<!-- nb carb must be with nb layout, otherwise, it doesn't take effect -->
+<!-- nb carb can be outside of nb layout, but it must be with nb layout -->
+<!-- normally nb carb or other component should be in nb-layout-column or footer or header or sidebar of nb-layout -->

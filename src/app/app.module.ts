@@ -10,8 +10,8 @@ import { BudgetComponent } from './budget/budget.component';
 import { PreferenceGpuComponent } from './preference-gpu/preference-gpu.component';
 import { PreferenceCpuComponent } from './preference-cpu/preference-cpu.component';
 import { PreferenceRamComponent } from './preference-ram/preference-ram.component';
-import { ResultComponent, FsIconComponent } from './result/result.component';
-import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconModule, NbSidebarModule, NbLayoutModule, NbButtonModule, NbStepperModule } from '@nebular/theme';
+import { ResultComponent} from './result/result.component';
+import { NbThemeModule, NbThemeService, NbTreeGridModule, NbCardModule, NbIconModule, NbSidebarModule, NbLayoutModule, NbButtonModule, NbStepperModule, NbChatModule, NbActionsModule } from '@nebular/theme';
 import { RouterModule } from '@angular/router'; // we also need angular router for Nebular to function properly
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
 import { NbCheckboxModule, NbRadioModule } from '@nebular/theme';
@@ -19,6 +19,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { UserRecordService } from './userRecord.service';
 import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
 import { HeaderStepperComponent } from './header-stepper/header-stepper.component';
+import { FileIconComponent } from './result/file-icon/file-icon.component';
+import { ChatbotComponent } from './result/chatbot/chatbot.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,10 +34,11 @@ import { HeaderStepperComponent } from './header-stepper/header-stepper.componen
     PreferenceCpuComponent,
     PreferenceRamComponent,
     ResultComponent,
-    FsIconComponent,
     CpuSelectionComponent,
     GpuSelectionComponent,
     HeaderStepperComponent,
+    FileIconComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,10 @@ import { HeaderStepperComponent } from './header-stepper/header-stepper.componen
     NbTreeGridModule,
     NbIconModule,
     NbStepperModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbChatModule,
+    BrowserAnimationsModule,
+    NbActionsModule
   ],
   providers: [UserRecordService, NbThemeService],
   bootstrap: [AppComponent]
