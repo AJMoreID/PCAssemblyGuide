@@ -61,7 +61,7 @@ export class GpuSelectionComponent implements OnInit {
   }
 
   navToRAM() {
-    this.router.navigateByUrl('/gpu');
+    this.router.navigateByUrl('/ram');
   }
   navToStorage() {
     this.router.navigateByUrl('/gpu');

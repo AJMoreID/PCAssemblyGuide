@@ -1,1 +1,72 @@
-<p>preference-ram works!</p>
+<nb-layout>
+    <nb-layout-header>
+        <div class="navParts">
+            <img alt="cpu" class="navIcons" src="../../assets/images/chip.svg" (click)="navToCPU();">
+            <img alt="gpu" class="navIcons" src="../../assets/images/gpu.png" (click)="navToGPU();">
+            <img alt="ram" class="navIcons navIcons-active" src="../../assets/images/ram.svg" (click)="navToRAM();">
+            <img alt="storage" class="navIcons" src="../../assets/images/storage.svg" (click)="navToStorage();">
+            <img alt="mb" class="navIcons" src="../../assets/images/mob.svg" (click)="navToMB();">
+            <img alt="ps" class="navIcons" src="../../assets/images/supply.svg" (click)="navToPowerSupply();">
+            <img alt="case" class="navIcons" src="../../assets/images/desktop.svg" (click)="navToCase();">
+        </div>
+        <!-- <button nbButton *ngIf="themeName == 'default'" status="info" (click)="changeToDarkTheme()">
+            Change Theme
+        </button>
+        <button nbButton *ngIf="themeName == 'dark'" status="info" (click)="changeToDefaultTheme()">
+            Change Theme
+        </button> -->
+    </nb-layout-header>
+
+    <nb-sidebar>
+        <div>
+            <h2 class="sideBarTitle">Chosse Your RAM</h2>
+        </div>
+
+        <div class="rolePicked">
+            <h2>Ram Size</h2>
+            <hr style="width: 80%; margin: 1em auto; ">
+                <div class="brandSelection" (click)="filter8GRam()">
+                <h4 style="text-align: center;">8GB</h4>
+            </div>
+            <div class="brandSelection"(click)="filter16GRam()">
+                <h4 style="text-align: center;">16GB</h4>
+            </div>
+            <div class="brandSelection"(click)="filter32GRam()">
+                <h4 style="text-align: center;">32GB</h4>
+            </div>
+            <div class="brandSelection"(click)="filter64GRam()">
+                <h4 style="text-align: center;">64GB</h4>
+            </div>
+        </div>
+
+        <div class="btnGroup">
+            <button class="backBtn" nbButton status="basic" (click)="backToGPUSelection()">Back</button>
+            <button class="nextBtn" nbButton status="success" (click)="nextToStorageSelection()">Next</button>
+        </div>
+
+    </nb-sidebar>
+    <nb-layout-column>
+        <nb-card>
+            <table data-source="filteredRam">
+                <tr *ngFor="let ram of filteredRam; let i = index;">
+                    <div class="selection">
+                        <nb-radio status="basic" [value]="ram.ramId" (click)="ramSelected(filteredRam[i])">
+                            <td class="productPrice">
+                                <p>{{filteredRam[i].ramPrice}}</p>
+                            </td>
+                            <td class="productName">
+                                <p>{{filteredRam[i].ramName}}</p>
+                            </td>
+                            <td class="productSize">
+                                <p>{{filteredRam[i].ramSize}}</p>
+                            </td>
+                        </nb-radio>
+                    </div>
+                </tr>
+            </table>
+        </nb-card>
+
+    </nb-layout-column>
+
+    <nb-layout-footer>This is footer</nb-layout-footer>
+</nb-layout>

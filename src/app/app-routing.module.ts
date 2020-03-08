@@ -7,6 +7,7 @@ import { ResultComponent } from './result/result.component';
 import { CpuSelectionComponent } from './cpu-selection/cpu-selection.component';
 import { GpuSelectionComponent } from './gpu-selection/gpu-selection.component';
 import { HeaderStepperComponent } from './header-stepper/header-stepper.component';
+import { PreferenceRamComponent } from './preference-ram/preference-ram.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'budget', component: BudgetComponent},
   {path: 'cpu', component: CpuSelectionComponent},
   {path: 'gpu', component: GpuSelectionComponent},
+  {path: 'ram', component: PreferenceRamComponent},
   {path: 'summary', component: ResultComponent},
   {path: 'header', component: HeaderStepperComponent},
   {path: '**', redirectTo: 'start'}
