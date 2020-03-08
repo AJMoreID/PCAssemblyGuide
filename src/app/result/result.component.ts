@@ -12,23 +12,22 @@ interface FSEntry {
   kind: string;
   items?: number;
 }
-
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent implements OnInit{
+export class ResultComponent implements OnInit {
 
   customColumn = 'name';
-  defaultColumns = [ 'size', 'kind', 'items' ];
-  allColumns = [ this.customColumn, ...this.defaultColumns ];
+  defaultColumns = ['size', 'kind', 'items'];
+  allColumns = [this.customColumn, ...this.defaultColumns];
 
   dataSource: NbTreeGridDataSource<FSEntry>;
 
   sortColumn: string;
   sortDirection: NbSortDirection = NbSortDirection.NONE;
-  
+
   disabledIconConfig: NbIconConfig = { icon: 'settings-2-outline', pack: 'eva' };
 
   constructor(private dataSourceBuilder: NbTreeGridDataSourceBuilder<FSEntry>) {
@@ -38,6 +37,7 @@ export class ResultComponent implements OnInit{
   ngOnInit(): void {
 
   }
+
 
   updateSort(sortRequest: NbSortRequest): void {
     this.sortColumn = sortRequest.column;
