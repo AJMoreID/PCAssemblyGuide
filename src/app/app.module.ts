@@ -57,7 +57,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NbEvaIconsModule,
     NbChatModule,
     BrowserAnimationsModule,
-    NbActionsModule
+    NbActionsModule,
+    NbChatModule
   ],
   providers: [UserRecordService, NbThemeService],
   bootstrap: [AppComponent]
