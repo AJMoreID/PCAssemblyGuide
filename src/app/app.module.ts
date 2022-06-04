@@ -22,6 +22,7 @@ import { HeaderStepperComponent } from './header-stepper/header-stepper.componen
 import { FileIconComponent } from './result/file-icon/file-icon.component';
 import { ChatbotComponent } from './result/chatbot/chatbot.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NbChatModule,
     BrowserAnimationsModule,
     NbActionsModule,
-    NbChatModule
+    NbChatModule,
+    HttpClientModule
   ],
   providers: [UserRecordService, NbThemeService],
   bootstrap: [AppComponent]

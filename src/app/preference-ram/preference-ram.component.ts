@@ -11,8 +11,9 @@ import { UserRecordService } from '../userRecord.service';
 export class PreferenceRamComponent implements OnInit {
   public ramList = ramList;
   filteredRam;
+  pcassembly: {};
 
-  constructor(private router: Router, private userRecord: UserRecordService) { }
+  constructor(private router: Router, private userRecordService: UserRecordService) { }
 
   ngOnInit(): void {
     this.filteredRam = ramList;
@@ -42,10 +43,17 @@ export class PreferenceRamComponent implements OnInit {
     this.router.navigateByUrl('/storage');
   }
 
+  // save current selected pc assembly (contains id, computerType, cpuBrand, cpuId, gpuId, ramId)
+  onSubmit() {
+    this.pcassembly = this.userRecordService.userProfile;
+    console.log("pcassembly: ", this.pcassembly);
+    this.userRecordService.savePcAssemblyOptions(this.pcassembly).subscribe(result => this.nextToStorageSelection());
+  }
+
   ramSelected(value) {
-    this.userRecord.setUserData(this.userRecord.storageTemplate.ramId, value.ramId)
+    this.userRecordService.setUserData(this.userRecordService.storageTemplate.ramId, value.ramId)
     console.log(value);
-    console.log(this.userRecord.userProfile);
+    console.log(this.userRecordService.userProfile);
   }
 
   navToGPU() {
